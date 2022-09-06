@@ -54,12 +54,12 @@ public class CalenderMethodTests
     }
 
     [Fact]
-    public void Returns_0_isnt_leap_year()
+    public void Returns_0_is_leap_year()
     {
         var calender = new GregorianCalender();
 
         var result = calender.IsLeapYear(0);
 
-        result.Should().Be(false);
+        result.Should().Be(true);
     }
 }
