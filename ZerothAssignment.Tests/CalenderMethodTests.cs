@@ -92,4 +92,24 @@ public class CalenderMethodTests
 
         result.Should().Be(false);
     }
+
+    [Fact]
+    public void Returns_1600_is_leap_year()
+    {
+        var calender = new GregorianCalender();
+
+        var result = calender.IsLeapYear(1600);
+
+        result.Should().Be(true);
+    }
+
+    [Fact]
+    public void Returns_2200_is_leap_year()
+    {
+        var calender = new GregorianCalender();
+
+        var result = calender.IsLeapYear(2200);
+
+        result.Should().Be(true);
+    }
 }
