@@ -104,11 +104,11 @@ public class CalenderMethodTests
     }
 
     [Fact]
-    public void Returns_2200_is_leap_year()
+    public void Returns_2400_is_leap_year()
     {
         var calender = new GregorianCalender();
 
-        var result = calender.IsLeapYear(2200);
+        var result = calender.IsLeapYear(2400);
 
         result.Should().Be(true);
     }
