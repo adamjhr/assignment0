@@ -1,8 +1,16 @@
 namespace ZerothAssignment.Tests;
 
-public class UnitTest1
+public class CalenderMethodTests
 {
 
+    [Fact]
+    public void Returns_4_is_leap_year()
+    {
+        var calender = new GregorianCalender();
 
+        var result = calender.IsLeapYear(4);
+
+        result.Should().Be(true);
+    }
     
 }
