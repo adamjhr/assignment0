@@ -139,7 +139,7 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_negative_8_isnt_leap_year() {
+    public void Returns_negative_8_is_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
@@ -150,7 +150,7 @@ public class LeapYearConsoleTests {
         program.EntryPoint?.Invoke(null, new[] { Array.Empty<string>() });
 
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("nay");
+        output.Should().Be("yay");
     }
 
     [Fact]
