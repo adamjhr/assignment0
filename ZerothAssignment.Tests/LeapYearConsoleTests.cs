@@ -154,11 +154,11 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_twenty_four_isnt_leap_year() {
+    public void Returns_24_spelled_out_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("24");
+        using var reader = new StringReader("twenty four");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
