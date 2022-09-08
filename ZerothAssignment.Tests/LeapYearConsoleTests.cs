@@ -3,11 +3,11 @@ namespace ZerothAssignment.Tests;
 public class LeapYearConsoleTests {
 
     [Fact]
-    public void Returns_4_is_leap_year() {
+    public void Returns_2004_is_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("4");
+        using var reader = new StringReader("2004");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
@@ -18,11 +18,11 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_16_is_leap_year() {
+    public void Returns_1916_is_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("16");
+        using var reader = new StringReader("1916");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
@@ -33,11 +33,11 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_400_is_leap_year() {
+    public void Returns_2400_is_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("400");
+        using var reader = new StringReader("2400");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
@@ -49,22 +49,22 @@ public class LeapYearConsoleTests {
 
         
     [Fact]
-    public void Returns_2000_is_leap_year() {
+    public void Returns_1200_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("2000");
+        using var reader = new StringReader("1200");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
         program.EntryPoint?.Invoke(null, new[] { Array.Empty<string>() });
 
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("yay");
+        output.Should().Be("nay");
     }
     
     [Fact]
-    public void Returns_0_is_leap_year() {
+    public void Returns_0_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
@@ -75,15 +75,15 @@ public class LeapYearConsoleTests {
         program.EntryPoint?.Invoke(null, new[] { Array.Empty<string>() });
 
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("yay");
+        output.Should().Be("nay");
     }
 
     [Fact]    
-    public void Returns_17_isnt_leap_year() {
+    public void Returns_1817_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("17");
+        using var reader = new StringReader("1817");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
@@ -94,11 +94,11 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_300_isnt_leap_year() {
+    public void Returns_1700_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("300");
+        using var reader = new StringReader("1700");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
@@ -109,11 +109,11 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_637_isnt_leap_year() {
+    public void Returns_1637_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
-        using var reader = new StringReader("637");
+        using var reader = new StringReader("1637");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
@@ -139,7 +139,7 @@ public class LeapYearConsoleTests {
     }
 
     [Fact]
-    public void Returns_negative_8_is_leap_year() {
+    public void Returns_negative_8_isnt_leap_year() {
 
         using var writer = new StringWriter();
         Console.SetOut(writer);
@@ -150,7 +150,7 @@ public class LeapYearConsoleTests {
         program.EntryPoint?.Invoke(null, new[] { Array.Empty<string>() });
 
         var output = writer.GetStringBuilder().ToString().TrimEnd();
-        output.Should().Be("yay");
+        output.Should().Be("nay");
     }
 
     [Fact]
@@ -159,6 +159,21 @@ public class LeapYearConsoleTests {
         using var writer = new StringWriter();
         Console.SetOut(writer);
         using var reader = new StringReader("twenty four");
+        Console.SetIn(reader);
+
+        var program = Assembly.Load(nameof(ZerothAssignment));
+        program.EntryPoint?.Invoke(null, new[] { Array.Empty<string>() });
+
+        var output = writer.GetStringBuilder().ToString().TrimEnd();
+        output.Should().Be("nay");
+    }
+
+    [Fact]
+    public void Returns_4_isnt_leap_year() {
+
+        using var writer = new StringWriter();
+        Console.SetOut(writer);
+        using var reader = new StringReader("4");
         Console.SetIn(reader);
 
         var program = Assembly.Load(nameof(ZerothAssignment));
