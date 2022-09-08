@@ -1,0 +1,26 @@
+graph TB
+    A[/User input/]
+    B{Convert to integer}
+    C(Print 'nay')
+    E(Print 'yay')
+    F(Run IsLeapYear method)
+    G{Is year less than 1582}
+    H{Is year divisible by 400}
+    I{Is year divisible by 100}
+    J{Is year divisible by 4}
+    K(Return false)
+    L(Return true)
+    A --> B
+    B -- Error --> C
+    B -- Converted --> F
+    F --> G
+    G -- Yes --> K
+    G -- No --> H
+    H -- Yes --> L
+    H -- No --> I
+    I -- Yes --> K
+    I -- No --> J
+    J -- Yes --> L
+    J -- No --> K
+    K --> C
+    L --> E
